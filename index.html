@@ -1,0 +1,1106 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Implementación Red Empresarial - Cisco Packet Tracer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-network-wired me-2"></i>
+                Red Empresarial
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#introduccion">Introducción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#arquitectura">Arquitectura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#departamentos">Departamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#configuracion">Configuración</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#telefonia">Telefonía IP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vigilancia">Vigilancia</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-4">Guía de Implementación</h1>
+            <h2 class="h3 mb-4">Red Empresarial con Cisco Packet Tracer</h2>
+            <p class="lead mb-5">Arquitectura en árbol con conectividad cableada, inalámbrica, telefonía IP y cámaras de vigilancia</p>
+            <a href="#arquitectura" class="btn btn-primary btn-lg">
+                <i class="fas fa-rocket me-2"></i>Comenzar Guía
+            </a>
+        </div>
+    </section>
+
+    <!-- Introducción -->
+    <section id="introduccion" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-info-circle fa-3x text-primary mb-3"></i>
+                                <h2 class="h3">Introducción al Proyecto</h2>
+                            </div>
+                            <p class="lead text-center mb-4">Esta guía detallada te ayudará a implementar una red empresarial completa utilizando Cisco Packet Tracer, perfecta para tu Trabajo de Fin de Grado (TFG).</p>
+                            
+                            <div class="row g-4 mt-4">
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <i class="fas fa-sitemap fa-2x text-primary mb-3"></i>
+                                        <h5>Arquitectura en Árbol</h5>
+                                        <p class="small text-muted">Diseño jerárquico escalable y eficiente</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                                        <h5>Telefonía IP</h5>
+                                        <p class="small text-muted">Sistema completo de comunicaciones</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="text-center">
+                                        <i class="fas fa-video fa-2x text-primary mb-3"></i>
+                                        <h5>Vigilancia IP</h5>
+                                        <p class="small text-muted">Monitoreo y seguridad empresarial</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Arquitectura -->
+    <section id="arquitectura" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-5">
+                        <h2 class="display-6 fw-bold">Arquitectura de Red en Árbol</h2>
+                        <p class="lead">Estructura jerárquica de tres capas para máximo rendimiento</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="card h-100 layer-card core-layer">
+                        <div class="card-body text-center">
+                            <i class="fas fa-server fa-3x text-danger mb-3"></i>
+                            <h4 class="card-title">Capa Núcleo (Core)</h4>
+                            <p class="card-text">Switches de alto rendimiento que interconectan los switches de distribución</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="fas fa-check text-success me-2"></i>Switch multilayer 3560</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Alta velocidad</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Redundancia</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card h-100 layer-card distribution-layer">
+                        <div class="card-body text-center">
+                            <i class="fas fa-project-diagram fa-3x text-warning mb-3"></i>
+                            <h4 class="card-title">Capa Distribución</h4>
+                            <p class="card-text">Switches que agregan y segmentan el tráfico de los switches de acceso</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="fas fa-check text-success me-2"></i>Switches 2960</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Enrutamiento Inter-VLAN</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Políticas de seguridad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card h-100 layer-card access-layer">
+                        <div class="card-body text-center">
+                            <i class="fas fa-laptop fa-3x text-success mb-3"></i>
+                            <h4 class="card-title">Capa Acceso</h4>
+                            <p class="card-text">Switches que conectan directamente a los dispositivos finales</p>
+                            <ul class="list-unstyled mt-3">
+                                <li><i class="fas fa-check text-success me-2"></i>Switches 2960 con PoE</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Teléfonos IP</li>
+                                <li><i class="fas fa-check text-success me-2"></i>Puntos de acceso Wi-Fi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Network Diagram -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h5><i class="fas fa-sitemap me-2"></i>Diagrama de Arquitectura de Red</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="network-diagram" class="text-center py-4">
+                                <div class="network-layer core-visual mb-4">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="network-device core-device">
+                                            <i class="fas fa-server fa-2x"></i>
+                                            <p class="small mt-2">Core Switch</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="network-layer distribution-visual mb-4">
+                                    <div class="d-flex justify-content-center gap-5">
+                                        <div class="network-device distribution-device">
+                                            <i class="fas fa-project-diagram fa-2x"></i>
+                                            <p class="small mt-2">Distribution 1</p>
+                                        </div>
+                                        <div class="network-device distribution-device">
+                                            <i class="fas fa-project-diagram fa-2x"></i>
+                                            <p class="small mt-2">Distribution 2</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="network-layer access-visual">
+                                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                        <div class="network-device access-device">
+                                            <i class="fas fa-ethernet fa-lg"></i>
+                                            <p class="small mt-1">Access 1</p>
+                                        </div>
+                                        <div class="network-device access-device">
+                                            <i class="fas fa-ethernet fa-lg"></i>
+                                            <p class="small mt-1">Access 2</p>
+                                        </div>
+                                        <div class="network-device access-device">
+                                            <i class="fas fa-ethernet fa-lg"></i>
+                                            <p class="small mt-1">Access 3</p>
+                                        </div>
+                                        <div class="network-device access-device">
+                                            <i class="fas fa-ethernet fa-lg"></i>
+                                            <p class="small mt-1">Access 4</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departamentos -->
+    <section id="departamentos" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-5">
+                        <h2 class="display-6 fw-bold">Departamentos de la Empresa</h2>
+                        <p class="lead">15 departamentos con VLANs específicas para segmentación de red</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="10">
+                        <div class="card-body text-center">
+                            <i class="fas fa-crown fa-2x text-warning mb-2"></i>
+                            <h6 class="card-title">Dirección General</h6>
+                            <small class="text-muted">VLAN 10</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="20">
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-tie fa-2x text-primary mb-2"></i>
+                            <h6 class="card-title">Subdirección</h6>
+                            <small class="text-muted">VLAN 20</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="30">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users fa-2x text-info mb-2"></i>
+                            <h6 class="card-title">Recursos Humanos</h6>
+                            <small class="text-muted">VLAN 30</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="40">
+                        <div class="card-body text-center">
+                            <i class="fas fa-dollar-sign fa-2x text-success mb-2"></i>
+                            <h6 class="card-title">Finanzas</h6>
+                            <small class="text-muted">VLAN 40</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="50">
+                        <div class="card-body text-center">
+                            <i class="fas fa-calculator fa-2x text-secondary mb-2"></i>
+                            <h6 class="card-title">Contabilidad</h6>
+                            <small class="text-muted">VLAN 50</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="60">
+                        <div class="card-body text-center">
+                            <i class="fas fa-cogs fa-2x text-danger mb-2"></i>
+                            <h6 class="card-title">Producción</h6>
+                            <small class="text-muted">VLAN 60</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="70">
+                        <div class="card-body text-center">
+                            <i class="fas fa-truck fa-2x text-warning mb-2"></i>
+                            <h6 class="card-title">Logística y Almacén</h6>
+                            <small class="text-muted">VLAN 70</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="80">
+                        <div class="card-body text-center">
+                            <i class="fas fa-flask fa-2x text-info mb-2"></i>
+                            <h6 class="card-title">I+D</h6>
+                            <small class="text-muted">VLAN 80</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="90">
+                        <div class="card-body text-center">
+                            <i class="fas fa-laptop-code fa-2x text-primary mb-2"></i>
+                            <h6 class="card-title">Soporte Técnico / IT</h6>
+                            <small class="text-muted">VLAN 90</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bullhorn fa-2x text-danger mb-2"></i>
+                            <h6 class="card-title">Marketing</h6>
+                            <small class="text-muted">VLAN 100</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="110">
+                        <div class="card-body text-center">
+                            <i class="fas fa-handshake fa-2x text-success mb-2"></i>
+                            <h6 class="card-title">Ventas</h6>
+                            <small class="text-muted">VLAN 110</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="120">
+                        <div class="card-body text-center">
+                            <i class="fas fa-headset fa-2x text-info mb-2"></i>
+                            <h6 class="card-title">Atención al Cliente</h6>
+                            <small class="text-muted">VLAN 120</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="130">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt fa-2x text-dark mb-2"></i>
+                            <h6 class="card-title">Seguridad y Vigilancia</h6>
+                            <small class="text-muted">VLAN 130</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="140">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users-cog fa-2x text-secondary mb-2"></i>
+                            <h6 class="card-title">Sala de Juntas</h6>
+                            <small class="text-muted">VLAN 140</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card dept-card" data-vlan="150">
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-friends fa-2x text-muted mb-2"></i>
+                            <h6 class="card-title">Visitantes / Invitados</h6>
+                            <small class="text-muted">VLAN 150</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Configuración -->
+    <section id="configuracion" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-5">
+                        <h2 class="display-6 fw-bold">Configuración Paso a Paso</h2>
+                        <p class="lead">Instrucciones detalladas para implementar la red empresarial</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="accordion" id="configAccordion">
+                        <!-- Paso 1 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#paso1">
+                                    <i class="fas fa-sitemap me-2"></i>
+                                    Paso 1: Diseño de la Topología
+                                </button>
+                            </h2>
+                            <div id="paso1" class="accordion-collapse collapse show" data-bs-parent="#configAccordion">
+                                <div class="accordion-body">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <h5>Dispositivos necesarios:</h5>
+                                            <ul class="list-group mb-3">
+                                                <li class="list-group-item"><i class="fas fa-server text-danger me-2"></i><strong>Switch Núcleo:</strong> 3560 Multilayer</li>
+                                                <li class="list-group-item"><i class="fas fa-project-diagram text-warning me-2"></i><strong>Switch Distribución:</strong> 2960 (2 unidades)</li>
+                                                <li class="list-group-item"><i class="fas fa-ethernet text-success me-2"></i><strong>Switch Acceso:</strong> 2960 con PoE (8 unidades)</li>
+                                                <li class="list-group-item"><i class="fas fa-router text-info me-2"></i><strong>Router:</strong> 2811 para Internet</li>
+                                                <li class="list-group-item"><i class="fas fa-wifi text-primary me-2"></i><strong>Access Points:</strong> AP-PT (15 unidades)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="card bg-primary text-white">
+                                                <div class="card-body">
+                                                    <h6><i class="fas fa-lightbulb me-2"></i>Tip Importante</h6>
+                                                    <p class="small mb-0">Utiliza cables de fibra óptica entre switches de núcleo y distribución para mayor velocidad.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paso2">
+                                    <i class="fas fa-tags me-2"></i>
+                                    Paso 2: Configuración de VLANs
+                                </button>
+                            </h2>
+                            <div id="paso2" class="accordion-collapse collapse" data-bs-parent="#configAccordion">
+                                <div class="accordion-body">
+                                    <h5>Crear VLANs en switches:</h5>
+                                    <div class="code-block">
+                                        <pre><code>enable
+configure terminal
+vlan 10
+ name Direccion_General
+vlan 20
+ name Subdireccion
+vlan 30
+ name Recursos_Humanos
+vlan 40
+ name Finanzas
+vlan 50
+ name Contabilidad
+vlan 60
+ name Produccion
+vlan 70
+ name Logistica_Almacen
+vlan 80
+ name ID
+vlan 90
+ name Soporte_IT
+vlan 100
+ name Marketing
+vlan 110
+ name Ventas
+vlan 120
+ name Atencion_Cliente
+vlan 130
+ name Seguridad_Vigilancia
+vlan 140
+ name Sala_Juntas
+vlan 150
+ name Visitantes
+exit</code></pre>
+                                    </div>
+                                    <h5 class="mt-4">Asignar puertos a VLANs:</h5>
+                                    <div class="code-block">
+                                        <pre><code>interface fastEthernet 0/1
+ switchport mode access
+ switchport access vlan 10
+exit
+
+interface fastEthernet 0/2
+ switchport mode access
+ switchport access vlan 20
+exit</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 3 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paso3">
+                                    <i class="fas fa-road me-2"></i>
+                                    Paso 3: Configuración de Troncales
+                                </button>
+                            </h2>
+                            <div id="paso3" class="accordion-collapse collapse" data-bs-parent="#configAccordion">
+                                <div class="accordion-body">
+                                    <h5>Configurar enlaces troncales:</h5>
+                                    <div class="code-block">
+                                        <pre><code>interface GigabitEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk allowed vlan all
+ switchport trunk native vlan 1
+exit
+
+interface GigabitEthernet0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport trunk allowed vlan all
+ switchport trunk native vlan 1
+exit</code></pre>
+                                    </div>
+                                    <div class="alert alert-warning mt-3">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        <strong>Importante:</strong> Configura troncales en todos los enlaces entre switches para permitir el paso de múltiples VLANs.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 4 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paso4">
+                                    <i class="fas fa-exchange-alt me-2"></i>
+                                    Paso 4: Enrutamiento Inter-VLAN
+                                </button>
+                            </h2>
+                            <div id="paso4" class="accordion-collapse collapse" data-bs-parent="#configAccordion">
+                                <div class="accordion-body">
+                                    <h5>Configurar interfaces VLAN en switch multilayer:</h5>
+                                    <div class="code-block">
+                                        <pre><code>ip routing
+
+interface vlan10
+ ip address 192.168.10.1 255.255.255.0
+ no shutdown
+exit
+
+interface vlan20
+ ip address 192.168.20.1 255.255.255.0
+ no shutdown
+exit
+
+interface vlan30
+ ip address 192.168.30.1 255.255.255.0
+ no shutdown
+exit
+
+interface vlan40
+ ip address 192.168.40.1 255.255.255.0
+ no shutdown
+exit</code></pre>
+                                    </div>
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>VLAN</th>
+                                                    <th>Departamento</th>
+                                                    <th>Red</th>
+                                                    <th>Gateway</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>10</td>
+                                                    <td>Dirección General</td>
+                                                    <td>192.168.10.0/24</td>
+                                                    <td>192.168.10.1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>20</td>
+                                                    <td>Subdirección</td>
+                                                    <td>192.168.20.0/24</td>
+                                                    <td>192.168.20.1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>30</td>
+                                                    <td>Recursos Humanos</td>
+                                                    <td>192.168.30.0/24</td>
+                                                    <td>192.168.30.1</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>40</td>
+                                                    <td>Finanzas</td>
+                                                    <td>192.168.40.0/24</td>
+                                                    <td>192.168.40.1</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paso 5 -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#paso5">
+                                    <i class="fas fa-wifi me-2"></i>
+                                    Paso 5: Red Inalámbrica
+                                </button>
+                            </h2>
+                            <div id="paso5" class="accordion-collapse collapse" data-bs-parent="#configAccordion">
+                                <div class="accordion-body">
+                                    <h5>Configuración de Access Points:</h5>
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <h6>1. Conectar Access Point al switch</h6>
+                                            <p>Conecta el AP al puerto del switch de acceso correspondiente al departamento.</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6>2. Configurar SSID</h6>
+                                            <p>Accede al AP y configura el nombre de la red inalámbrica.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Departamento</th>
+                                                    <th>SSID</th>
+                                                    <th>Seguridad</th>
+                                                    <th>Password</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Dirección General</td>
+                                                    <td>CORP-DIRECCION</td>
+                                                    <td>WPA2</td>
+                                                    <td>Dir2024!</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Recursos Humanos</td>
+                                                    <td>CORP-RRHH</td>
+                                                    <td>WPA2</td>
+                                                    <td>RRHH2024!</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Visitantes</td>
+                                                    <td>CORP-GUEST</td>
+                                                    <td>WPA2</td>
+                                                    <td>Guest2024</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Telefonía IP -->
+    <section id="telefonia" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-5">
+                        <h2 class="display-6 fw-bold">
+                            <i class="fas fa-phone-alt me-3"></i>Configuración de Telefonía IP
+                        </h2>
+                        <p class="lead">Implementación completa del sistema de comunicaciones VoIP</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-server fa-3x text-primary mb-3"></i>
+                            <h5>Call Manager Express</h5>
+                            <p>Servidor de telefonía integrado en router Cisco para gestión de llamadas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-phone fa-3x text-success mb-3"></i>
+                            <h5>Teléfonos IP</h5>
+                            <p>Dispositivos IP Phone conectados via PoE para cada departamento</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-network-wired fa-3x text-warning mb-3"></i>
+                            <h5>Infraestructura PoE</h5>
+                            <p>Power over Ethernet para alimentar teléfonos sin cables adicionales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h4><i class="fas fa-cogs me-2"></i>Configuración Detallada</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h5>1. Configuración del Call Manager Express en Router:</h5>
+                            <div class="code-block mb-4">
+                                <pre><code>configure terminal
+
+! Habilitar telefonía IP
+telephony-service
+ max-ephones 50
+ max-dn 50
+ ip source-address 192.168.1.1 port 2000
+ auto-reg-ephone
+ create cnf-files version-stamp 7960 Jun 30 2024 00:00:00
+
+! Configurar DHCP para teléfonos IP
+ip dhcp pool VOICE_POOL
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ option 150 ip 192.168.1.1
+ dns-server 8.8.8.8
+
+! Configurar extensiones
+ephone-dn 1
+ number 1001
+ name "Direccion General"
+
+ephone-dn 2
+ number 1002
+ name "Recursos Humanos"
+
+ephone-dn 3
+ number 1003
+ name "Finanzas"
+
+ephone-dn 4
+ number 1004
+ name "Produccion"
+</code></pre>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <h6><i class="fas fa-info-circle me-2"></i>Información Importante</h6>
+                                    <ul class="small mb-0">
+                                        <li>Option 150: Dirección del servidor TFTP</li>
+                                        <li>Max-ephones: Número máximo de teléfonos</li>
+                                        <li>Auto-reg-ephone: Registro automático</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h5>2. Asignación de Teléfonos a Extensiones:</h5>
+                    <div class="code-block mb-4">
+                        <pre><code>! Asignar teléfonos físicos a extensiones
+ephone 1
+ device-security-mode none
+ mac-address 0001.C9A1.1234
+ type 7960
+ button 1:1
+
+ephone 2
+ device-security-mode none
+ mac-address 0001.C9A1.1235
+ type 7960
+ button 1:2
+
+ephone 3
+ device-security-mode none
+ mac-address 0001.C9A1.1236
+ type 7960
+ button 1:3
+</code></pre>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <h5>3. Plan de Numeración por Departamentos:</h5>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Departamento</th>
+                                            <th>Extensión</th>
+                                            <th>VLAN</th>
+                                            <th>IP Range</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><i class="fas fa-crown text-warning me-2"></i>Dirección General</td>
+                                            <td>1001</td>
+                                            <td>10</td>
+                                            <td>192.168.10.10-15</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-user-tie text-primary me-2"></i>Subdirección</td>
+                                            <td>1002</td>
+                                            <td>20</td>
+                                            <td>192.168.20.10-15</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-users text-info me-2"></i>Recursos Humanos</td>
+                                            <td>1003</td>
+                                            <td>30</td>
+                                            <td>192.168.30.10-15</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-dollar-sign text-success me-2"></i>Finanzas</td>
+                                            <td>1004</td>
+                                            <td>40</td>
+                                            <td>192.168.40.10-15</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-cogs text-danger me-2"></i>Producción</td>
+                                            <td>1005</td>
+                                            <td>60</td>
+                                            <td>192.168.60.10-15</td>
+                                        </tr>
+                                        <tr>
+                                            <td><i class="fas fa-headset text-info me-2"></i>Atención al Cliente</td>
+                                            <td>1006</td>
+                                            <td>120</td>
+                                            <td>192.168.120.10-15</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-success mt-4">
+                        <h6><i class="fas fa-check-circle me-2"></i>Pasos para Configurar en Packet Tracer:</h6>
+                        <ol>
+                            <li><strong>Añadir Router 2811:</strong> Arrastrar desde panel de dispositivos</li>
+                            <li><strong>Conectar al Core Switch:</strong> Cable directo GigabitEthernet</li>
+                            <li><strong>Añadir Teléfonos IP:</strong> IP Phone-PT desde End Devices</li>
+                            <li><strong>Conectar a Switch PoE:</strong> Cable directo al switch de acceso</li>
+                            <li><strong>Configurar Router:</strong> CLI con comandos mostrados arriba</li>
+                            <li><strong>Verificar Registro:</strong> show ephone y show ephone-dn</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vigilancia -->
+    <section id="vigilancia" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center mb-5">
+                        <h2 class="display-6 fw-bold">
+                            <i class="fas fa-video me-3"></i>Sistema de Vigilancia IP
+                        </h2>
+                        <p class="lead">Implementación completa de cámaras de seguridad y monitoreo</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-3">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-video fa-3x text-danger mb-3"></i>
+                            <h5>Cámaras IP</h5>
+                            <p>Cámaras de alta definición con conectividad de red</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-server fa-3x text-primary mb-3"></i>
+                            <h5>NVR Server</h5>
+                            <p>Servidor de grabación de video en red para almacenamiento</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-desktop fa-3x text-success mb-3"></i>
+                            <h5>Centro de Control</h5>
+                            <p>Estaciones de monitoreo para vigilancia en tiempo real</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card h-100 feature-card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-cloud fa-3x text-warning mb-3"></i>
+                            <h5>Almacenamiento</h5>
+                            <p>Respaldo en la nube y almacenamiento local redundante</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <h4><i class="fas fa-cogs me-2"></i>Configuración del Sistema de Vigilancia</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h5>1. Configuración de VLAN para Vigilancia:</h5>
+                            <div class="code-block mb-4">
+                                <pre><code>! Crear VLAN específica para vigilancia
+vlan 200
+ name VIGILANCIA_IP
+exit
+
+! Configurar interfaz VLAN para cámaras
+interface vlan200
+ ip address 192.168.200.1 255.255.255.0
+ no shutdown
+exit
+
+! Asignar puertos a VLAN de vigilancia
+interface range fastEthernet 0/20-24
+ switchport mode access
+ switchport access vlan 200
+ power inline auto
+exit
+</code></pre>
+                            </div>
+
+                            <h5>2. Configuración DHCP para Cámaras:</h5>
+                            <div class="code-block mb-4">
+                                <pre><code>! Pool DHCP para cámaras IP
+ip dhcp pool CAMERAS_POOL
+ network 192.168.200.0 255.255.255.0
+ default-router 192.168.200.1
+ dns-server 192.168.200.1
+ lease 7
+exit
+
+! Reservas estáticas para cámaras críticas
+ip dhcp reservation
+ client-identifier 01aa.bbcc.ddee.ff
+ ip address 192.168.200.10
+ client-name "Camara-Entrada-Principal"
+exit
+</code></pre>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card bg-warning text-dark">
+                                <div class="card-body">
+                                    <h6><i class="fas fa-exclamation-triangle me-2"></i>Consideraciones de Seguridad</h6>
+                                    <ul class="small mb-0">
+                                        <li>Usar contraseñas fuertes</li>
+                                        <li>Cambiar credenciales por defecto</li>
+                                        <li>Habilitar HTTPS</li>
+                                        <li>Configurar ACLs restrictivas</li>
+                                        <li>Actualizar firmware regularmente</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h5>3. Ubicación de Cámaras por Área:</h5>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Ubicación</th>
+                                    <th>Tipo de Cámara</th>
+                                    <th>IP Asignada</th>
+                                    <th>Cobertura</th>
+                                    <th>Grabación</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="fas fa-door-open me-2"></i>Entrada Principal</td>
+                                    <td>Domo PTZ</td>
+                                    <td>192.168.200.10</td>
+                                    <td>360° - 20m</td>
+                                    <td>24/7</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-car me-2"></i>Estacionamiento</td>
+                                    <td>Fija HD</td>
+                                    <td>192.168.200.11</td>
+                                    <td>Área completa</td>
+                                    <td>24/7</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-building me-2"></i>Recepción</td>
+                                    <td>Domo Interior</td>
+                                    <td>192.168.200.12</td>
+                                    <td>Vista amplia</td>
+                                    <td>Horario oficina</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-box me-2"></i>Almacén</td>
+                                    <td>Fija IR</td>
+                                    <td>192.168.200.13</td>
+                                    <td>Pasillos principales</td>
+                                    <td>24/7</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-cogs me-2"></i>Producción</td>
+                                    <td>Fija HD</td>
+                                    <td>192.168.200.14</td>
+                                    <td>Línea de producción</td>
+                                    <td>Horario laboral</td>
+                                </tr>
+                                <tr>
+                                    <td><i class="fas fa-server me-2"></i>Sala de Servidores</td>
+                                    <td>Domo Interior</td>
+                                    <td>192.168.200.15</td>
+                                    <td>Racks completos</td>
+                                    <td>24/7</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <h6><i class="fas fa-laptop me-2"></i>Acceso Web a Cámaras</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h6>Configuración de acceso web:</h6>
+                                    <ol class="small">
+                                        <li>Acceder a la IP de la cámara via navegador</li>
+                                        <li>Usuario: admin / Pass: admin123</li>
+                                        <li>Configurar red: IP estática, gateway, DNS</li>
+                                        <li>Configurar video: resolución, FPS, bitrate</li>
+                                        <li>Configurar grabación: horarios, eventos</li>
+                                        <li>Configurar usuarios: permisos de acceso</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-success text-white">
+                                    <h6><i class="fas fa-server me-2"></i>Configuración NVR</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h6>Servidor de grabación:</h6>
+                                    <ol class="small">
+                                        <li>Instalar software NVR en servidor</li>
+                                        <li>Configurar almacenamiento (RAID recomendado)</li>
+                                        <li>Añadir cámaras por IP</li>
+                                        <li>Configurar perfiles de grabación</li>
+                                        <li>Establecer retención de datos</li>
+                                        <li>Configurar alertas y notificaciones</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert alert-info mt-4">
+                        <h6><i class="fas fa-info-circle me-2"></i>Pasos en Packet Tracer:</h6>
+                        <ol>
+                            <li><strong>Añadir Cámaras IP:</strong> Desde IoT Devices → Generic IP Camera</li>
+                            <li><strong>Conectar a Switch:</strong> Cable directo a switch PoE</li>
+                            <li><strong>Configurar IP:</strong> Click en cámara → Config → Global Settings</li>
+                            <li><strong>Añadir Servidor:</strong> Server-PT para NVR</li>
+                            <li><strong>Configurar Software:</strong> Habilitar servicio de video</li>
+                            <li><strong>Probar Conectividad:</strong> Ping desde PC de seguridad</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">
+                <i class="fas fa-network-wired me-2"></i>
+                Guía de Implementación Red Empresarial - Cisco Packet Tracer
+            </p>
+            <p class="small text-muted mt-2">Desarrollado para proyectos TFG y aprendizaje de redes empresariales</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
